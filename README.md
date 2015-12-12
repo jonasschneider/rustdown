@@ -1,8 +1,6 @@
-# Rustdown
+# Rustdown ![Build status](https://travis-ci.org/jonasschneider/rustdown.svg?branch=master)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rustdown`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Rustdown is a proof of concept for Rust-based Ruby gems. It implements a Markdown-to-HTML converter. It is a Ruby gem that packages the Rust [`hoedown`](https://crates.io/crates/hoedown/) crate, which in turn packages [the C `hoedown` library](https://github.com/hoedown/hoedown).
 
 ## Installation
 
@@ -22,17 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'rustdown'
+
+    Rustdown.to_html("lol **important**")
+    # => "<p>lol <strong>important</strong></p>\n"
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After changing the Rust code, you have to recompile using `rake compile`.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/rustdown/fork )
+1. Fork it ( https://github.com/jonasschneider/rustdown/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

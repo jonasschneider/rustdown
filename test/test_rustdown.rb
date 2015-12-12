@@ -13,6 +13,10 @@ class TestRustdown < Minitest::Test
 
   def test_it_works_like_kramdown
     text = File.read(File.dirname(__FILE__) + "/fixture_mdbasics.md")
+    # .. they actually aren't entirely equal with regards to
+    # (a) quote escaping and
+    # (b) blocks that span multiple paragraphs
+    # ... meh. just do a benchmark instead! :)
 
     n = 1000
     Benchmark.bm do |x|
