@@ -1,11 +1,12 @@
 [package]
 name = "rustdown"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+authors = ["Jonas Schneider <mail@jonasschneider.com>"]
 
 [lib]
 crate-type = ["dylib"]
 path = "rustdown.rs"
 
 [dependencies]
-libc = "<1"
+libc = "0.2.2"
+markdown = "0.1"
