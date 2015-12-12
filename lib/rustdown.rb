@@ -8,7 +8,7 @@ module Rustdown
     end
     unless @path
       $stderr.puts "Could not find librustdown. Looked at:"
-      $stderr.puts File.dirname(__FILE__)+"/../"+Gem.loaded_specs["rustdown"].require_paths.first+"/librustdown*"
+      $stderr.puts Gem.loaded_specs["rustdown"].require_paths.first+"/librustdown*"
       raise "Failed to load librustdown"
     end
     extend ::FFI::Library
