@@ -10,6 +10,9 @@ all: $(wildcard $(SRC)/*.rs)
 \t [ -e target/release/librustdown.dylib ] && mv target/release/librustdown.dylib librustdown.bundle || mv target/release/librustdown.* .
 
 install:
+\tls -l >&2
 \tinstall librustdown.* #{installdest}
 END
 )
+
+$stderr.puts(File.read("Makefile"))
