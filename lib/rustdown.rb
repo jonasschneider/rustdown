@@ -4,12 +4,11 @@ require 'ffi'
 module Rustdown
   module FFI
     @path = begin
-      Dir[File.dirname(__FILE__)+"/../"+Gem.loaded_specs["rustdown"].require_paths.first+"/librustdown*"].first
+      d = $:.detect { |d| Dir["#{d}/librustdown*"].any? }
+      if d then Dir["#{d}/librustdown*"].first else nil end
     end
     unless @path
-      $stderr.puts "Could not find librustdown. Looked at:"
-      $stderr.puts Gem.loaded_specs["rustdown"].require_paths.first+"/librustdown*"
-      raise "Failed to load librustdown"
+      raise "Could not find the librustdown binary! Your installation is incomplete ..?"
     end
     extend ::FFI::Library
     ffi_lib @path
