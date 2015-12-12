@@ -9,4 +9,4 @@ path = "rustdown.rs"
 
 [dependencies]
 libc = "0.2.2"
-markdown = "0.1"
+hoedown = "<4"

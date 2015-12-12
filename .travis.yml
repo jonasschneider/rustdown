@@ -1,3 +1,4 @@
 language: ruby
 rvm:
   - 2.1.5
+script: rake compile && ruby -Itest test/test_*.rb

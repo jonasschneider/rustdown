@@ -13,9 +13,8 @@ class TestRustdown < Minitest::Test
 
   def test_it_works_like_kramdown
     text = File.read(File.dirname(__FILE__) + "/fixture_mdbasics.md")
-    #assert_equal Kramdown::Document.new(text).to_html, Rustdown.to_html(text)
 
-    n = 10
+    n = 1000
     Benchmark.bm do |x|
       x.report "Rustdown" do
         n.times do   ; Rustdown.to_html(text); end

@@ -1,5 +1,5 @@
 src = File.expand_path(File.dirname(__FILE__))
-
+installdest = RbConfig::CONFIG['sitelibdir']
 File.write("Makefile", <<-END
 .PHONY: all
 SRC=#{src}
@@ -11,6 +11,6 @@ all: $(wildcard $(SRC)/*.rs)
 #\tclang -dynamic -bundle -o librustdown.bundle target/release/librustdown.dylib
 
 install:
-\t# nop
+\tinstall librustdown.bundle #{installdest}
 END
 )
