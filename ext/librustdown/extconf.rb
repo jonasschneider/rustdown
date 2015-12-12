@@ -6,7 +6,7 @@ SRC=#{src}
 DEST=$(shell pwd)
 
 all: $(wildcard $(SRC)/*.rs)
-\t cd $(SRC) && cargo build --release && ([[ "$(SRC)" = "$(DEST)" ]] && true || ln -s $(SRC)/target $(DEST)/target)
+\t cd $(SRC) && cargo build --release && ([ "$(SRC)" = "$(DEST)" ] && true || ln -s $(SRC)/target $(DEST)/target)
 \t mv target/release/librustdown.dylib librustdown.bundle
 #\tclang -dynamic -bundle -o librustdown.bundle target/release/librustdown.dylib
 
