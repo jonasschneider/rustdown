@@ -2,6 +2,8 @@
 
 Rustdown is a proof of concept for Rust-based Ruby gems. It implements a Markdown-to-HTML converter. It is a Ruby gem that packages the Rust [`hoedown`](https://crates.io/crates/hoedown/) crate, which in turn packages [the C `hoedown` library](https://github.com/hoedown/hoedown).
 
+The interesting code is probably in [`rustdown.rs`](https://github.com/jonasschneider/rustdown/blob/master/ext/librustdown/rustdown.rs) and [`rustdown.rb`](https://github.com/jonasschneider/rustdown/blob/master/lib/rustdown.rb).
+
 ## Installation
 
 Add this line to your application's Gemfile:
